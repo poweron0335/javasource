@@ -8,15 +8,22 @@ public class ForEx5 {
         // ****
         // *****
         // ******
-        for(int j = 1; j < 6; j++)
+        for(int j = 1; j <= 6; j++)
             {
                 for(int i = 1; i <= j; i++)
                     {
                         System.out.print("*");
                     }
-                System.out.println();
+                        System.out.println();
             }
-        
+        for(int j = 6; j >= 1; j--)
+        {
+            for(int i = 1; i <= j; i++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
     
 }
