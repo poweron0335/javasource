@@ -28,7 +28,7 @@ public class Bank {
                 moneyHave += money; // 입력받은 금액을 현재 잔액에 더한다.
                 System.out.printf("잔액 : %d\n", moneyHave);
                 break;
-                // 출급액 입력 받은 후 잔액 추가
+                // 출금액 입력 받은 후 잔액 추가
                 case 2:
                 System.out.print("출금 할 금액을 입력하십시오 : ");
                 money = sc.nextInt(); // 출금할 금액을 입력받는다
