@@ -7,7 +7,6 @@ public class Bank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean run = true;
-        int money = 0;
         int moneyHave = 0;
    
 
@@ -21,22 +20,31 @@ public class Bank {
 
 
             switch (menu) {
+                // 예금액 입력 받은 후 잔액 추가
                 case 1:
                 System.out.print("예금 할 금액을 입력하십시오 : ");
-                money = sc.nextInt();
+                int money = sc.nextInt(); // 예금할 금액을 입력받는다
                 System.out.println("예금 하신 금액은 " + money );
-                money += moneyHave;
-                System.out.printf("%d = %d\n",money, moneyHave ); 
-                // 예금액 입력 받은 후 잔액 추가
+                moneyHave += money; // 입력받은 금액을 현재 잔액에 더한다.
+                System.out.printf("잔액 : %d\n", moneyHave);
                 break;
+                // 출급액 입력 받은 후 잔액 추가
                 case 2:
                 System.out.print("출금 할 금액을 입력하십시오 : ");
-                moneyHave -= sc.nextInt();
-                // 출급액 입력 받은 후 잔액 추가
+                money = sc.nextInt(); // 출금할 금액을 입력받는다
+                if(money <= moneyHave) // 입력받은 금액이 현재 잔액보다 작거나 같으면 출금 가능
+                {
+                    moneyHave -= money;
+                    System.out.printf("출금 후 잔액 : %d\n", moneyHave);
+                }
+                else  // 출금이 불가능한 경우 잔액 부족 메시지 출력
+                {
+                    System.out.println("잔액부족");
+                }
                 break;
+                // 잔액 출력
                 case 3:
                 System.out.println("잔액 >> " + moneyHave);
-                // 잔액 출력
                 break;
                 case 4:
                 System.out.println("프로그램 종료");
