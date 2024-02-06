@@ -14,11 +14,11 @@ public class Triangle {
         this.height = height;
     }
 
-    @Override
-    public String toString() {
-        return "Triangle [baseLine=" + baseLine + ", height=" + height + "]";
+    // 메소드 getArea()
+    public double getArea() {
+        // 밑변 * 높이 / 2
+        return (double) baseLine * height / 2;
     }
-
     
 }
 

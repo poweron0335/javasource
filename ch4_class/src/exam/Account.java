@@ -14,6 +14,20 @@ public class Account {
         this.account = account;
         this.name = name;
         this.money = money;
+    
+    }
+    // 예금
+    public int deposit(int add)
+    {
+        money += add;
+        return money;
+    }
+
+    // 출금
+    public int withdraw(int subtrack)
+    {
+        money -= subtrack;
+        return money;
     }
 
     

@@ -10,10 +10,16 @@ public class StudentEx2 {
 
         // 주소 변경
         obj.changeAddr("서울시 중랑구");
+        obj.setAddr("서울시 중랑구");
         obj.changeHp("010-4567-8910");
+        obj.setHp("010-4567-8910");
         System.out.println(obj);
 
         Student2 obj2 = new Student2();
+        obj2.setId("20231145");
+        obj2.setName("김살구");
+        obj2.setAddr("서울시 종로구");
+        obj2.setHp("010-1234-5647");
         System.out.println(obj2);
 
         Student2 obj3 = new Student2("20245812", "김진수", "경기도 수원시");
