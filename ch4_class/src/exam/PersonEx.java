@@ -12,5 +12,5 @@ public class PersonEx {
         System.out.println(person2.getName());
 
     }
-    
+
 }

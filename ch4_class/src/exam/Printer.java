@@ -2,20 +2,19 @@ package exam;
 
 public class Printer {
 
-    void println(int num)
-    {
+    void println(int num) {
         System.out.println(num);
     }
-    void println(boolean flag)
-    {
+
+    void println(boolean flag) {
         System.out.println(flag);
     }
-    void println(double num)
-    {
+
+    void println(double num) {
         System.out.println(num);
     }
-    void println(String str)
-    {
+
+    void println(String str) {
         System.out.println(str);
     }
 }

@@ -11,5 +11,5 @@ public class CircleEx {
         double result = circle.getArea();
         System.out.println("원의 면적 : " + result);
     }
-    
+
 }

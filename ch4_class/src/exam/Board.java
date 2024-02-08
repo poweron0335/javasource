@@ -11,12 +11,11 @@ public class Board {
     private LocalDateTime regDate;
     private LocalDateTime lastModifedDate;
 
-    
     public Board() {
 
     }
-    public Board(int boardNo, String boardName, String boardN, String boardPoster) 
-    {
+
+    public Board(int boardNo, String boardName, String boardN, String boardPoster) {
         this.boardNo = boardNo;
         this.boardN = boardN;
         this.boardName = boardName;

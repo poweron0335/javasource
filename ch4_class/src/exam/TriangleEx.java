@@ -7,7 +7,7 @@ public class TriangleEx {
 
         double result = triangle.getArea();
         System.out.println("삼각형의 넓이는 " + result);
-        
+
     }
-    
+
 }
