@@ -1,5 +1,5 @@
 package com.project.book;
 
-// public class Sub extends final{
+// public class Sub extends Final{
 
 // }
