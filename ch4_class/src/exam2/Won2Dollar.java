@@ -4,18 +4,17 @@ public class Won2Dollar extends Converter {
 
     @Override
     protected double convert(double src) {
-        return src;
+        return src / 1200;
     }
 
     @Override
     protected String getSrcString() {
-        System.out.print("원");
-        return "";
+        return "원";
     }
 
     @Override
     protected String getDestString() {
-        return "";
+        return "달러";
     }
 
 }
