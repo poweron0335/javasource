@@ -5,7 +5,7 @@ public class ShopEx {
         IShop shop = new MyShop();
         shop.setTitle("MyShop");
         shop.genUser();
-        shop.genUser();
+        shop.genProduct();
         shop.start();
     }
 }

@@ -9,7 +9,9 @@ public class MyShop implements IShop {
     private String title;
     private int customerNo;
     // 장바구니
-    private Product carts[] = new Product[5]; // CellPhone과 SmartTv 둘다 담아야 하기 때문에
+    // CellPhone cellPhone[] = new CellPhone[5];
+    // SmartTV smartTV[] = new SmartTV[5];
+    private Product carts[] = new Product[5]; // CellPhone과 SmartTV 둘다 담아야 하기 때문에
 
     Scanner sc = new Scanner(System.in);
 
@@ -25,20 +27,24 @@ public class MyShop implements IShop {
         customer.setName("홍길동");
         customer.setPayType(PayType.CARD);
         customers[0] = customer;
+
         customer = new Customer();
-        customer.setName("이춘향");
-        customer.setPayType(PayType.CARD);
-        customers[1] = customer;
-        customer = new Customer();
-        customer.setName("김철수");
+        customer.setName("성춘향");
         customer.setPayType(PayType.CASH);
-        customers[2] = customer;
+        customers[1] = customer;
+
         customer = new Customer();
-        customer.setName("김길동");
+        customer.setName("이순신");
+        customer.setPayType(PayType.CARD);
+        customers[2] = customer;
+
+        customer = new Customer();
+        customer.setName("정우성");
         customer.setPayType(PayType.CASH);
         customers[3] = customer;
+
         customer = new Customer();
-        customer.setName("김수지");
+        customer.setName("이정재");
         customer.setPayType(PayType.CARD);
         customers[4] = customer;
     }
@@ -46,38 +52,43 @@ public class MyShop implements IShop {
     @Override
     public void genProduct() {
         // 제품 생성
-        CellPhone phone = new CellPhone("갤럭시노트", 1000000, "U+");
+        CellPhone phone = new CellPhone("갤럭시노트", 500000, "U+");
         products[0] = phone;
-        phone = new CellPhone("갤럭시23", 1000000, "SKT");
+        phone = new CellPhone("Z폴드", 2097000, "SKT");
         products[1] = phone;
-        phone = new CellPhone("갤럭시24", 2000000, "KT");
+        phone = new CellPhone("아이폰15", 1564000, "KT");
         products[2] = phone;
-        SmartTV tv = new SmartTV("삼성티비", 3000000, "8K");
+        SmartTV tv = new SmartTV("삼성 KQ75", 1821000, "4K");
         products[3] = tv;
-        tv = new SmartTV("엘지티비", 2000000, "4K");
+        tv = new SmartTV("LG OLED", 2315000, "Ultra");
         products[4] = tv;
     }
 
     @Override
     public void start() {
-        System.out.println(title + " : " + " 메인화면 " + " 계정선택");
-        System.out.println("==========================================");
+        System.out.println(title + " : 메인화면 - 계정선택");
+        System.out.println("===================================");
 
         for (int i = 0; i < customers.length; i++) {
-            System.out.printf("[%d] %s(%s)\n", i, customers[i].getName(), customers[i].getPayType());
+            System.out.printf(
+                    "[%d] %s(%s)\n",
+                    i,
+                    customers[i].getName(),
+                    customers[i].getPayType());
         }
         System.out.println("[x] 종료");
 
-        // 사용자로에게 고객번호 입력받기
-        System.out.println("고객 번호 입력하십시오 : ");
-        String cNo = sc.nextLine();
+        // 사용자에게 고객 번호 입력받기
+        System.out.print("고객 번호 >> ");
+        String cNo = sc.nextLine(); // 0~4, x
         System.out.println("\n### " + cNo + " 고객 선택 ###");
 
         customerNo = Integer.parseInt(cNo);
 
         if (cNo.equals("x")) {
-            System.exit(0); // 프로그램 강제종료
-        } else { // 0~4이 들어오면
+            System.out.println("종료합니다.");
+            System.exit(0);
+        } else { // 0~4
             productList();
         }
     }
@@ -85,8 +96,8 @@ public class MyShop implements IShop {
     public void productList() {
         // 상품 목록 출력
         System.out.println("\n");
-        System.out.println(title + " : " + " 상품목록 " + " 상품선택 ");
-        System.out.println("============================");
+        System.out.println(title + " : 상품목록 - 상품선택");
+        System.out.println("===================================");
 
         for (int i = 0; i < products.length; i++) {
             System.out.printf("[%d]", i);
@@ -95,8 +106,8 @@ public class MyShop implements IShop {
         System.out.println("[h] 메인 화면");
         System.out.println("[c] 체크 아웃");
 
-        System.out.println("상품 번호 입력하십시오 : ");
-        String menu = sc.nextLine();
+        System.out.print("상품 번호 >> ");
+        String menu = sc.nextLine(); // 0~4, x
 
         switch (menu) {
             case "h":
@@ -105,7 +116,7 @@ public class MyShop implements IShop {
             case "c":
                 checkOut();
                 break;
-            default: // 0 ~ 4에 해당하는 제품을 장바구니에 추가
+            default: // 0~4 에 해당하는 제품을 장바구니에 추가
                 for (int i = 0; i < carts.length; i++) {
                     if (carts[i] == null) {
                         carts[i] = products[Integer.parseInt(menu)];
@@ -114,21 +125,25 @@ public class MyShop implements IShop {
                 }
                 productList();
         }
-
     }
 
     public void checkOut() {
-        int i = 0, total = 0;
-        System.out.println(title + " : " + "체크아웃");
-        System.out.println("========================");
+        System.out.println("\n");
+        System.out.println(title + " : 체크아웃");
+        System.out.println("===================================");
 
+        int i = 0, total = 0;
         for (Product product : carts) {
             if (product != null) {
-                System.out.printf("[%d] %s %d\n", i, product.getPname(), product.getPrice());
+                System.out.printf(
+                        "[%d] %s %d\n",
+                        i++,
+                        product.getPname(),
+                        product.getPrice());
+                total += product.getPrice();
             }
-            total += product.getPrice();
         }
-        System.out.println("========================");
+        System.out.println("===================================");
         System.out.println("합계 : " + total);
         System.out.println("결제방법 : " + customers[customerNo].getPayType());
         System.out.println("[p] 이전");
