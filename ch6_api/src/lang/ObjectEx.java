@@ -40,7 +40,7 @@ public class ObjectEx {
         Member member1 = new Member("hond123");
         Member member2 = new Member("hong123");
 
-        // equlase() : 값 비교
+        // equals() : 값 비교
         // == : 주소비교
         System.out.println(member1.equals(member2) ? "같다" : "다르다");
         System.out.println(member1 == member2 ? "같다" : "다르다");

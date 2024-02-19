@@ -10,7 +10,7 @@ public class StringEx4 {
 
         int idx = 0;
         for (int i = 0; i < arr.length; i++) {
-            if ("kim".equals(arr[i])) {
+            if ("Kim".equals(arr[i])) {
                 idx = i;
                 break;
             }
