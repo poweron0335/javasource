@@ -36,7 +36,7 @@ public class BoxEx {
         // fruitBox.add(new Toy());
 
         appleBox.add(new Apple());
-        // appleBox.add(Fruit); : Fruit, Grape 담지못
+        // appleBox.add(Fruit); : Fruit, Grape 담지못한다.
 
         grapeBox.add(new Grape());
 

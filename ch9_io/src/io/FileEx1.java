@@ -36,6 +36,7 @@ public class FileEx1 {
         System.out.println("File.separatorChar - " + File.separatorChar);
         System.out.println();
         // 현재 작업 디렉토리
+
         System.out.println("user.dir = " + System.getProperty("user.dir"));
     }
 }

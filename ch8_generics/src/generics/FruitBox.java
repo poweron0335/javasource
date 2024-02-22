@@ -11,5 +11,9 @@ package generics;
 // sort(List<Toy> list, Comparator<? super Toy> c)
 // Comparator<Toy>, Comparator<Object>
 
-public class FruitBox<T extends Fruit> extends Box3<T> { // Fruit의 자식들만 T에 담는다. 라는 의미
+public class FruitBox<T extends Fruit> extends Box3<T> { // Fruit의 자식 클래스만을 'T'에 허용한다.
 }
+
+// 아래의 경우 컴파일 오류가 발생합니다.
+// FruitBox<String> stringBox = new FruitBox<>();  // 오류: String은 Fruit의 하위 클래스가 아님
+// FruitBox<Object> objectBox = new FruitBox<>();  // 오류: Object는 Fruit의 하위 클래스가 아님
