@@ -27,10 +27,10 @@ public class BufferedStreamEx2 {
             long end = System.currentTimeMillis();
             // System.out.println("FileInputStream + BufferedInputStream 사용 시 " + (end -
             // start)); // FileInputStream + BufferedInputStream 사용 시 2370
-            System.out.println("FileInputStream + byte 배열 + BufferedInputStream 사용 시 " + (end - start)); // FileInputStream
-                                                                                                         // + byte 배열 +
-                                                                                                         // BufferedInputStream
-                                                                                                         // 사용 시 76
+            System.out.println(
+                    "FileInputStream + byte 배열 + BufferedInputStream 사용 시 " + (end - start));
+            // FileInputStream + byte 배열 + BufferedInputStream 사용 시 76
+
         } catch (Exception e) {
             e.printStackTrace();
         }
